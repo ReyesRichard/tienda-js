@@ -1,0 +1,26 @@
+:root{
+    --cs-color1: #690;
+    --cs-color2: #4bf;
+    --cs-colorWhite1: #eee;
+    --cs-colorBlack1:#222; 
+    --cs-colorBlack2:#444; 
+    --cs-colorBlack3:#666; 
+
+    --cs-backgrondPrimary: #eee;
+    --cs-backgrondSecondary: #ccc;
+    --cs-backgrondTertiary: #aaa;
+    --cs-backgrondWhite: #fff;
+    --cs-backgrondBlack: #333;
+    --cs-border1: 1px solid #ccc;
+    --cs-border2: 1px solid #482;
+    --cs-border3: 1px solid #48f;
+
+    --cs-fFontAwersome: "Font Awesome 6 Free";
+
+    --cs-space1: 5px;
+    --cs-space2: 10px;
+    --cs-space3: 15px;
+    --cs-space4: 20px;
+    --cs-space5: 25px;
+    --cs-space6: 30px;
+}
