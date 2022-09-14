@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", e=>{
     data = getData()
     // console.table(data)
     generateProducts(data)
+    existCart()
     loadEventsLiseners()
     
 })
@@ -21,7 +22,6 @@ window.addEventListener("DOMContentLoaded", e=>{
 
 // Functions
 function loadEventsLiseners (){
-    
     cartMenu.addEventListener("click", handleTriggerCart)
     // Cart Product
     listaProductos.addEventListener("click", addProductCart)
@@ -31,13 +31,12 @@ function loadEventsLiseners (){
     cartCleanCart.addEventListener("click", cleanProductsCart )
 }
 
-// function emptyCart(){
-//     const count = data.products.length;
-//     if(count < 1 ){ 
-//         containerCart.innerHTML = 'Sin Productos';
-//         alert("menos de 1")
-//     }
-// }
+function existCart(){
+    console.log(localStorage.getItem("elementsCart"))
+    elementsCart = JSON.parse( localStorage.getItem("elementsCart") ) || []
+    generateCart()
+    console.log(elementsCart)
+}
 
 function addProductCart(e){
     e.preventDefault()
@@ -176,7 +175,8 @@ function generateCart () {
         containerCart.innerHTML = 'Sin Productos';
     }
 
-    
+    localStorage.setItem("elementsCart", JSON.stringify(elementsCart))
+
 }
 
 function handleTriggerCart () {
