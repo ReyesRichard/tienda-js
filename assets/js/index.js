@@ -14,7 +14,9 @@ window.addEventListener("DOMContentLoaded", e=>{
     // console.table(data)
     generateProducts(data)
     loadEventsLiseners()
+    
 })
+
 
 
 // Functions
@@ -28,6 +30,14 @@ function loadEventsLiseners (){
     containerCart.addEventListener("click", deleteProductCart)
     cartCleanCart.addEventListener("click", cleanProductsCart )
 }
+
+// function emptyCart(){
+//     const count = data.products.length;
+//     if(count < 1 ){ 
+//         containerCart.innerHTML = 'Sin Productos';
+//         alert("menos de 1")
+//     }
+// }
 
 function addProductCart(e){
     e.preventDefault()
@@ -135,7 +145,9 @@ function generateCart () {
     //     containerCart.removeChild(containerCart.firstChild)
     // }
     // generate elementes in cart
-    console.log(elementsCart)
+    console.log("generate",elementsCart, elementsCart.length)
+
+
     elementsCart.forEach(item => {
         const {id, imgs, title, price, amount} = item
 
@@ -160,6 +172,11 @@ function generateCart () {
         `
         containerCart.appendChild(row)
     })
+    if(elementsCart.length < 1){
+        containerCart.innerHTML = 'Sin Productos';
+    }
+
+    
 }
 
 function handleTriggerCart () {
